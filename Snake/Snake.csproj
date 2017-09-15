@@ -159,6 +159,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Img\ball_disponivel.png" />
     <Content Include="Content\Img\ball_indisponivel.png" />
+    <Content Include="Content\Img\cobra.jpg" />
+    <Content Include="Content\Img\grama.gif" />
+    <Content Include="Content\Img\mouse.gif" />
     <Content Include="Content\Img\snake.gif" />
     <Content Include="Content\Img\ui-icons_444444_256x240.png" />
     <Content Include="Content\Img\ui-icons_555555_256x240.png" />

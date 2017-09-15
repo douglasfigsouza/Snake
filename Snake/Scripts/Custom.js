@@ -38,7 +38,6 @@ $(document).ready(function () {
     }
     tabuleiro += "</tbody></table>";
     $("#containerTabuleiro").append(tabuleiro);
-
     geraComida();
     setInterval(function () {
         movimentaSnake();
@@ -61,21 +60,19 @@ function geraComida() {
 
 
 function pintaSnake(x, y) {
-    $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorDefault")
     $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorSnake");
-
+   
     $("#scoreAtual").text(snake.length - 1);
 }
 
 
 function apagaSnake(x, y) {
     $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorSnake");
-    $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorDefault");
 }
 
 
 function movimentaSnake() {
- 
+
     if (fimDeJogo == true) {
 
         apagaSnake(snake[snake.length - 1][0], snake[snake.length - 1][1]);
@@ -115,7 +112,6 @@ function movimentaSnake() {
 function verColisao(x, y) {
     if (mx == x && my == y) {
         $("#tabuleiro").children("tr").children("td#" + mx + "_" + my + "").removeClass("colorComida");
-        $("#tabuleiro").children("tr").children("td#" + mx + "_" + my + "").addClass("colorDefault");
         dimInterval=dimInterval - 10;
         return true;
     }
@@ -124,8 +120,7 @@ function verColisao(x, y) {
 
 function gameOver(x, y)
 {
-
-    if ($("#tabuleiro").children("tr").children("td#" + x + "_" + y).attr("class") == $("#tabuleiro").children("tr").children("td#" + x + "_" + y).attr("class") && $("#tabuleiro").children("tr").children("td#" + x + "_" + y).attr("class") == "colorSnake") {
+    if ($("#tabuleiro").children("tr").children("td#" + x+ "_" + y).attr("class") == $("#tabuleiro").children("tr").children("td#" + (x) + "_" +y).attr("class") && $("#tabuleiro").children("tr").children("td#" + x + "_" + y).attr("class") == "colorSnake") {
 
         var bestScore = localStorage.getItem('bestScore');
 
