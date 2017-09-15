@@ -157,6 +157,17 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Img\ball_disponivel.png" />
+    <Content Include="Content\Img\ball_indisponivel.png" />
+    <Content Include="Content\Img\snake.gif" />
+    <Content Include="Content\Img\ui-icons_444444_256x240.png" />
+    <Content Include="Content\Img\ui-icons_555555_256x240.png" />
+    <Content Include="Content\Img\ui-icons_777620_256x240.png" />
+    <Content Include="Content\Img\ui-icons_777777_256x240.png" />
+    <Content Include="Content\Img\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\Img\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery-ui-1.9.2.custom.css" />
+    <Content Include="Content\jquery-ui-1.9.2.custom.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -169,9 +180,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Cookies.js" />
+    <Content Include="Scripts\Custom.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.custom.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -179,6 +194,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Snake.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

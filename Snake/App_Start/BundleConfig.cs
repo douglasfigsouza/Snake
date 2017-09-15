@@ -21,11 +21,16 @@ namespace Snake
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/Custom.js",
+                      "~/Scripts/Cookies.js",
+                      "~/Scripts/jquery-ui-1.9.2.custom.min.js",
+                      "~/Scripts/jquery-ui-1.9.2.custom.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/jquery-ui-1.9.2.custom.css"));
         }
     }
 }

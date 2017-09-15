@@ -22,3 +22,28 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.tableCustom {
+    width:80%;
+    border:3px solid #064ef7;
+}
+.tableCustom tr {
+    height:80px;
+}
+.tableCustom tr td{
+    border-radius:20px;
+ 
+    padding:10px;
+}
+.colorSnake{
+    background-color:#000000;
+}
+.colorDefault{
+    background-color:#fff;
+}
+.colorComida {
+    background-color:#0f0;
+}
+#score {
+   border:3px solid #064ef7;
+}
