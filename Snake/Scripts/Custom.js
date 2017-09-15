@@ -38,6 +38,7 @@ $(document).ready(function () {
     }
     tabuleiro += "</tbody></table>";
     $("#containerTabuleiro").append(tabuleiro);
+
     geraComida();
     setInterval(function () {
         movimentaSnake();
@@ -61,13 +62,16 @@ function geraComida() {
 
 function pintaSnake(x, y) {
     $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorSnake");
-   
+
+
     $("#scoreAtual").text(snake.length - 1);
 }
 
 
 function apagaSnake(x, y) {
+    alert(x+"_"+y);
     $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorSnake");
+    $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
 }
 
 
@@ -75,7 +79,7 @@ function movimentaSnake() {
 
     if (fimDeJogo == true) {
 
-        apagaSnake(snake[snake.length - 1][0], snake[snake.length - 1][1]);
+            apagaSnake(snake[snake.length - 1][0], snake[snake.length - 1][1]);
             // define as posições em que a snake se move 
             if (direcao == "Right") snake[0][1]++;
             if (direcao == "Down") snake[0][0]++;
