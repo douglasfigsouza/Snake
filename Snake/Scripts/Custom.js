@@ -61,7 +61,25 @@ function geraComida() {
 
 
 function pintaSnake(x, y) {
-    $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorSnake");
+
+    if(direcao=="Right"){
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + (y - 1) + "").addClass("colorSnake");
+    }
+    else if (direcao == "Left") {
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + (y + 1) + "").addClass("colorSnake");
+    }
+    if (direcao == "Down")
+    {
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
+        $("#tabuleiro").children("tr").children("td#" +(x-1) + "_" + y + "").addClass("colorSnake");
+    }
+    else if (direcao == "Up")
+    {
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
+        $("#tabuleiro").children("tr").children("td#" + (x + 1) + "_" + y + "").addClass("colorSnake");
+    }
 
 
     $("#scoreAtual").text(snake.length - 1);
@@ -69,9 +87,40 @@ function pintaSnake(x, y) {
 
 
 function apagaSnake(x, y) {
-    alert(x+"_"+y);
-    $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorSnake");
-    $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+    
+    if (direcao == "Right") {
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+        $("#tabuleiro").children("tr").children("td#" + (x - 1) + "_" + y + "").removeClass("colorSnake");
+
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + (y - 1) + "").removeClass("colorSnake");
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+    }
+    else if (direcao == "Left") {
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+        $("#tabuleiro").children("tr").children("td#" + (x + 1) + "_" + y + "").removeClass("colorSnake");
+
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + (y + 1) + "").removeClass("colorSnake");
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+    }
+
+    
+    if (direcao == "Down")
+    {
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + (y - 1) + "").removeClass("colorSnake");
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+        $("#tabuleiro").children("tr").children("td#" + (x - 1) + "_" + y + "").removeClass("colorSnake");
+    }
+    else if (direcao=="Up") {
+
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + (y + 1) + "").removeClass("colorSnake");
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+        $("#tabuleiro").children("tr").children("td#" + (x +ç 1) + "_" + y + "").removeClass("colorSnake");
+    }
+
 }
 
 
