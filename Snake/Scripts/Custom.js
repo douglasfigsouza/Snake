@@ -1,4 +1,4 @@
-﻿var snake = [[0, 0]];
+﻿var snake = [[4, 0]];
 var direcao = "";
 var mx=0;
 var my = 0;
@@ -62,23 +62,25 @@ function geraComida() {
 
 function pintaSnake(x, y) {
 
-    if(direcao=="Right"){
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
+    if (direcao == "Right") {
+
         $("#tabuleiro").children("tr").children("td#" + x + "_" + (y - 1) + "").addClass("colorSnake");
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
     }
     else if (direcao == "Left") {
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
         $("#tabuleiro").children("tr").children("td#" + x + "_" + (y + 1) + "").addClass("colorSnake");
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
     }
     if (direcao == "Down")
     {
+
+        $("#tabuleiro").children("tr").children("td#" + (x - 1) + "_" + y + "").addClass("colorSnake");
         $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
-        $("#tabuleiro").children("tr").children("td#" +(x-1) + "_" + y + "").addClass("colorSnake");
     }
     else if (direcao == "Up")
     {
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
         $("#tabuleiro").children("tr").children("td#" + (x + 1) + "_" + y + "").addClass("colorSnake");
+        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").addClass("colorHead");
     }
 
 
@@ -87,40 +89,41 @@ function pintaSnake(x, y) {
 
 
 function apagaSnake(x, y) {
-    
-    if (direcao == "Right") {
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
-        $("#tabuleiro").children("tr").children("td#" + (x - 1) + "_" + y + "").removeClass("colorSnake");
+    switch (direcao) {
+        case ("Right"):
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + (y - 1) + "").removeClass("colorSnake");
+            $("#tabuleiro").children("tr").children("td#" + (x - 1) + "_" + y + "").removeClass("colorSnake");
+            $("#tabuleiro").children("tr").children("td#" + (x + 1) + "_" + y + "").removeClass("colorSnake");
 
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + (y - 1) + "").removeClass("colorSnake");
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+
+            break;
+        case ("Left"):
+
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + (y + 1) + "").removeClass("colorSnake");
+            $("#tabuleiro").children("tr").children("td#" + (x - 1) + "_" + y + "").removeClass("colorSnake");
+            $("#tabuleiro").children("tr").children("td#" + (x + 1) + "_" + y + "").removeClass("colorSnake");
+
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+            break;
+
+        case ("Down"):
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + (y - 1) + "").removeClass("colorSnake");
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + (y + 1) + "").removeClass("colorSnake");
+            $("#tabuleiro").children("tr").children("td#" + (x - 1) + "_" + y + "").removeClass("colorSnake");
+
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+            $("#tabuleiro").children("tr").children("td#" + (x - 1) + "_" + y + "").removeClass("colorHead");
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + (y-1) + "").removeClass("colorHead");
+            break;
+        case ("Up"):
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + (y + 1) + "").removeClass("colorSnake");
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + (y - 1) + "").removeClass("colorSnake");
+            $("#tabuleiro").children("tr").children("td#" + (x + 1) + "_" + y + "").removeClass("colorSnake");
+
+            $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
+            break;
     }
-    else if (direcao == "Left") {
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
-        $("#tabuleiro").children("tr").children("td#" + (x + 1) + "_" + y + "").removeClass("colorSnake");
-
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + (y + 1) + "").removeClass("colorSnake");
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
-    }
-
-    
-    if (direcao == "Down")
-    {
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + (y - 1) + "").removeClass("colorSnake");
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
-
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
-        $("#tabuleiro").children("tr").children("td#" + (x - 1) + "_" + y + "").removeClass("colorSnake");
-    }
-    else if (direcao=="Up") {
-
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + (y + 1) + "").removeClass("colorSnake");
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
-
-        $("#tabuleiro").children("tr").children("td#" + x + "_" + y + "").removeClass("colorHead");
-        $("#tabuleiro").children("tr").children("td#" + (x +ç 1) + "_" + y + "").removeClass("colorSnake");
-    }
-
 }
 
 

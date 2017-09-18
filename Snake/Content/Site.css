@@ -26,7 +26,7 @@ textarea {
 .tableCustom {
     width:80%;
     border:3px solid #064ef7;
-    background-image:url(/Content/Img/grama.gif);
+    /*background-image:url(/Content/Img/grama.gif);*/
     background-repeat:no-repeat;
     background-size:100%;
 
@@ -37,7 +37,7 @@ textarea {
 .tableCustom tr td{
     border-radius:20px;
     padding:10px;
-    /*border:1px solid #000000;*/
+    border:1px solid #fff;
 }
 .colorSnake{
     background-image:url(/Content/Img/cobra.jpg);
